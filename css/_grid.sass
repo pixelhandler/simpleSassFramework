@@ -1,0 +1,76 @@
+// Grid 
+=========================== 
+// e.g. 960px, 12 columns: 10- 60-20(11) 60-10 
+
+!gTotal = 960px
+!grid = 16
+!gGutter = 20px
+
+!gMargin = !gGutter / 2
+!gCol = ( !gTotal / !grid ) - !gGutter
+
+
+!col16 = ( !gCol * !grid) + ( !gGutter * ( !grid - 1 ) )
+
+.test
+  width = !col16
+
+
+// mixins
+=gridTest
+  background: #fc0
+  min-height: 80px
+  filter: alpha(opacity=90)
+  +opacity(90)
+
+=column
+  display: inline
+  float: left
+  margin-right = !gMargin
+  margin-left = !gMargin
+  +gridTest
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-13, .col-14, .col-15, .col-16
+  +column
+
+.col-16
+  background-color: transparent
+
+.full-16
+  margin: 0 auto
+  width = !gTotal
+
+
+@for !i from 1 through 12
+  .col-#{!i}
+    width = ( !gCol * !i ) + ( !gGutter * ( !i - 1 ) )
+
+
+@for !i from 1 through 4
+  .push-#{!i}
+    margin-left = ( !gCol + !gMargin ) * !i
+
+
+@for !i from 1 through 4
+  .pull-#{!i}
+    margin-left = 0 - ( !i * ( !gCol + !gMargin ) )
+
+.indentLeft
+  margin-left = !gMargin * 2
+
+.indentRight
+  margin-right = !gMargin * 2
+
+.extend
+  margin-right: 0
+  margin-left: 0
+  padding-left: !gMargin * 2
+  padding-right: !gMargin * 2
+
+.first
+  clear: left
+  margin-left: 0
+
+.last
+  margin-right: 0
+

@@ -1,0 +1,178 @@
+// Layout 
+// =========================== 
+
+body
+  background-color = !bkg_color
+
+
+#wrapper
+  background:
+    color = !wht_color
+    // image: url(../images/bkg.png)
+    // repeat: repeat-y
+    // position:  0 0
+  margin: 0 auto
+  font-size: 0.75em
+  line-height: 1.5em
+  width = !gTotal
+
+// Global: Header 
+#header
+  background:
+    color = !bkg_hdr_color
+    // image: url(../images/bkg.png)
+    // repeat: no-repeat
+    // position: 0 0
+  color = !wht_color
+  // width = !gTotal
+
+  .byword
+    font-size: 1.5em
+    margin-left: 1em
+    position: relative
+    top: 44px
+
+#searchForm
+  float: right
+  position: relative
+  font-size: 0.833em
+  top: 4px
+
+input
+  font-size: 1em
+
+#searchInput
+  background-color = !input_bgk_color
+  border: none
+  color = !input_color
+  height: 12px
+  padding: 2px 6px
+  margin-right: 10px
+  width: 240px
+
+#searchSubmit
+  background-color = !btn_color
+  border: none
+  color = !btn_txt_color
+  color = !wht_color
+  cursor: pointer
+  margin-right: 10px
+  height: 1.5em
+  padding: 2px 6px
+  right: 10px
+  top: 1px
+  +borderRadius(3px)
+  // behavior: url(/stylesheets/border-radius.htc)
+
+  &:hover
+    color = !hover_color
+
+
+#branding
+  height: 90px
+
+
+#logo
+  left: 30px
+  position: relative
+  top: 14px
+
+// Top Navigation 
+#topnav
+  +fonts
+  background:
+    color = !bkg_nav_color
+    //image: url(../images/bkg.png)
+    //repeat: repeat-x
+    //position: 0 0
+  height: 30px
+
+=menuLi
+  +zero
+  display: list-item
+  float: none
+  list-style-type: none
+  text-align: left
+
+
+#menu
+  float: left
+  list-style: none
+  list-style-image: none
+  margin: 0
+  text-align: center
+
+  li
+    display: block
+    float: left
+
+  ul
+    +zero
+
+  li
+    > ul
+      background-color = !bkg_color
+      left: -999em
+      margin: 0
+      filter: alpha(opacity=75)
+      +opacity(75)
+      padding: 0
+      position: absolute
+      z-index: 75
+
+      > li
+        +menuLi
+
+        + li
+          +menuLi
+
+    &:hover > ul
+      left: auto
+
+// li:hover doesn't work in IE, .js to the rescue 
+
+=tNav
+  color = !wht_color
+  line-height: 30px
+  padding: 7px 2.9em
+
+#topnav a
+  +tNav
+  text-decoration: none
+  width: 100%
+
+  &:link, &:hover, &:visited, &:active, &:focus
+    +tNav
+    text-decoration: none
+    width: 100%
+
+  &:hover, &:active, &:focus
+    color = !wht_color
+    background-color = !nav_color
+    filter: alpha(opacity=75)
+    +opacity(50)
+ 
+
+#menu li > ul a
+  padding-left: 0
+
+
+// Global: Content Layout 
+#leader
+  height = !leaderHt
+  // width = !gTotal
+
+
+#hero
+  height = !leaderHt
+  z-index: 10
+
+
+#reel, #no_reel
+  margin: 0
+
+#content
+  // background-color: transparent
+  // width = !gTotal
+
+  

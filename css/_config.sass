@@ -1,0 +1,48 @@
+//  Default colors: 
+// =========================== 
+
+!blk_color = #000
+!bdr_color = #ccc
+!bkg_color = #efefef
+!bkg_hdr_color = #999
+!bkg_nav_color = #A6CAFF
+!btn_color = #C00
+!btn_txt_color = #fff
+!input_color = #666
+!input_bgk_color = #ccc
+!link_color = #000
+!heading_color = #666
+!hover_color = #333
+!nav_color = #999
+!txt_color = #333
+!wht_color = #fff
+
+// Layout variables 
+
+!leaderHt = 60px
+
+// mixins
+
+=opacity(!value)
+  -moz-opacity = !value / 100
+  -khtml-opacity = !value / 100
+  opacity = !value / 100
+
+=zero
+  margin: 0
+  padding: 0
+
+=borderRadius(!value)
+  -moz-border-radius = !value
+  -webkit-border-radius = !value
+  border-radius = !value
+
+=fonts
+  font-family: 'Lucida Grande', 'Lucida Sans', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif
+
+=bkg
+  background:
+    // color = !wht_color
+    // image: url(../images/bkg.png)
+    repeat: repeat-x
+    position:  0 0

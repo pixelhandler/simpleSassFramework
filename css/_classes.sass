@@ -1,0 +1,171 @@
+// Classes 
+=========================== 
+
+
+// layout helpers and sytle blocks 
+#wrapper > div.inset:first-child
+  padding: 0 15px
+
+.topGrad
+  background:
+    color: transparent
+    //image: url(../images/grad.png)
+    //repeat: repeat-x
+
+
+.inset
+  padding = !gMargin
+  height: 100%
+
+
+.aside
+  background:
+    color = !wht_color
+  border-top = "1px solid #{!bdr_color}"
+  padding = !gMargin
+
+
+.teaser
+  font-weight: normal
+
+  img
+    +bkg
+
+  div, p
+    +zero
+
+
+.framed
+  +bkg
+  float: none
+  padding: 3px
+  margin: 0 0 16px 0
+
+
+.ruleTop
+  border-top = "1px solid #{!wht_color}"
+
+
+.ruleBot
+  border-bottom = "1px solid #{!bdr_color}"
+
+
+// Links 
+
+a.plain
+  text-decoration: none
+
+  &:link, &:hover, &:visited, &:active, &:focus
+    text-decoration: none
+
+// clearing 
+
+.clear
+  clear: both
+
+.clearRight
+  clear: right
+
+.clearLeft
+  clear: left
+
+// floats 
+
+.floatLeft
+  float: left
+
+
+.floatRight
+  float: right
+
+
+.textLeft
+  text-align: left
+
+// Text 
+
+.textRight
+  text-align: right
+
+
+.textCenter
+  text-align: center
+
+
+.textJustify
+  text-align: justify
+
+// Font style 
+
+.bold
+  font-weight: bold
+
+
+.italic
+  font-style: italic
+
+
+.byword
+  font-style: italic
+  color = !txt_color
+
+
+.underline
+  border
+    bottom: 1px solid
+    color = !bdr_color
+  margin-bottom: 1em
+  padding-bottom: 0
+
+
+
+.highlight
+  background: #ffc
+
+// Images 
+
+.img-left
+  float: left
+  margin: 4px 10px 4px 0
+
+
+.img-right
+  float: right
+  margin: 4px 0 4px 10px
+
+
+.border
+  border = "1px solid #{!bdr_color}"
+  padding: 3px
+
+
+
+// Spacing 
+
+.nopadding
+  padding: 0
+
+
+.noindent
+  margin-left: 0
+  padding-left: 0
+
+// Lists 
+
+.nobullet
+  list-style: none
+    image: none
+
+// Accessibility 
+
+.accessibility
+  display: none
+
+.helperInfo
+  font
+    size: 1em
+    style: italic
+
+
+// Plugins 
+
