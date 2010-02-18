@@ -153,6 +153,9 @@ table {
 tr th, tr td {
   padding: 2px; }
 
+/* =========================== */
+/* = Setup your grid here... = */
+/* =========================== */
 .full, .wide {
   clear: left; }
 
