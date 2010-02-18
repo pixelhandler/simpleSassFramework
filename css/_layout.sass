@@ -32,41 +32,6 @@ body
     position: relative
     top: 44px
 
-#searchForm
-  float: right
-  position: relative
-  font-size: 0.833em
-  top: 4px
-
-input
-  font-size: 1em
-
-#searchInput
-  background-color = !input_bgk_color
-  border: none
-  color = !input_color
-  height: 12px
-  padding: 2px 6px
-  margin-right: 10px
-  width: 240px
-
-#searchSubmit
-  background-color = !btn_color
-  border: none
-  color = !btn_txt_color
-  color = !wht_color
-  cursor: pointer
-  margin-right: 10px
-  height: 1.5em
-  padding: 2px 6px
-  right: 10px
-  top: 1px
-  +borderRadius(3px)
-  // behavior: url(/stylesheets/border-radius.htc)
-
-  &:hover
-    color = !hover_color
-
 
 #branding
   height: 90px
@@ -76,6 +41,51 @@ input
   left: 30px
   position: relative
   top: 14px
+
+
+#searchForm
+  display: block
+  float: right
+  font-size: 0.833em
+  right: 0
+  padding = !gMargin / 2
+  right = 0 - (!gGutter)
+  +colWidth(4)
+
+//  input
+//    font-size: 1em
+
+#searchInput, #searchSubmit
+  font-size: 1em
+  height: 1em
+  padding: 2px 4px
+
+#searchInput
+  background-color = !input_bgk_color
+  border: none
+  color = !input_color
+  height: 12px
+  margin-right = !gMargin
+  width = 3 * !gCol + !gGutter
+
+#searchSubmit
+  background-color = !btn_color
+  border: none
+  color = !btn_txt_color
+  color = !wht_color
+  cursor: pointer
+  margin-right = !gMargin
+  margin-left = 0 - (!gMargin * 1.5)
+  height: 1.5em
+  right = !gMargin
+  +borderRadius(3px)
+  // behavior: url(/stylesheets/border-radius.htc)
+  width = 1.5 * !gCol
+
+
+  &:hover
+    color = !hover_color
+
 
 // Top Navigation 
 #topnav
@@ -87,12 +97,15 @@ input
     //position: 0 0
   height: 30px
 
+!menuWidth = (2 * !gCol) + !gGutter
+
 =menuLi
   +zero
   display: list-item
   float: none
   list-style-type: none
   text-align: left
+  min-width = !menuWidth
 
 
 #menu
@@ -105,17 +118,19 @@ input
   li
     display: block
     float: left
+    min-width = !menuWidth
+    +zero
 
   ul
     +zero
 
   li
     > ul
-      background-color = !bkg_color
+      background-color = !bkg_nav_color
       left: -999em
       margin: 0
-      filter: alpha(opacity=75)
-      +opacity(75)
+      filter: alpha(opacity=77)
+      +opacity(77)
       padding: 0
       position: absolute
       z-index: 75
@@ -133,24 +148,23 @@ input
 
 =tNav
   color = !wht_color
-  line-height: 30px
-  padding: 7px 2.9em
+  line-height = !gGutter * 1.5
+  padding = "7px #{!gGutter * 1.5}"
+  width: 100%
 
 #topnav a
   +tNav
   text-decoration: none
-  width: 100%
 
   &:link, &:hover, &:visited, &:active, &:focus
     +tNav
     text-decoration: none
-    width: 100%
 
   &:hover, &:active, &:focus
-    color = !wht_color
+    color = !link_color
     background-color = !nav_color
     filter: alpha(opacity=75)
-    +opacity(50)
+    +opacity(75)
  
 
 #menu li > ul a
@@ -159,12 +173,12 @@ input
 
 // Global: Content Layout 
 #leader
-  height = !leaderHt
+  // height = !leaderHt
   // width = !gTotal
 
 
 #hero
-  height = !leaderHt
+  // height = !leaderHt
   z-index: 10
 
 

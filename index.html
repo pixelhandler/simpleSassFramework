@@ -15,21 +15,25 @@
 <body id="home">
 <div id="wrapper">
 	<!--<div class="inset">-->
-		<div id="header" class="">
+		<div id="header" class="full-16">
 			<div class="inset">
 				<div id="branding">
-					BRANDING: Lorem ipsum dolor sit amet
+					<h1>BRANDING: Lorem ipsum dolor sit amet</h1>
 				</div><!--/#branding-->
-				<a href="#content" class="accessibility">&#x2193; Skip to page content</a>
-				<a id="mainmenu" class="accessibility">Main Menu</a>
-				<div id="topnav"  class="">
+				<a href="#mainContent" class="accessibility">&#x2193; Skip to page content</a>
+				<a id="mainMenu" class="accessibility">Main Menu</a>
+				<div id="topnav" class="rounded">
 					<ul id="menu">
-						<li><a href="#">one</a></li>
-						<li><a href="#">two</a></li>
-						<li><a href="#">three</a></li>
-						<li><a href="#">four</a></li>
-						<li><a href="#">five</a></li>
-						<li><a href="#">six</a></li>
+						<li><a href="#">Item one</a></li>
+						<li><a href="#">Item two</a><ul>
+							<li><a href="#">Item aaa</a></li>
+							<li><a href="#">Item bbb</a></li>
+							<li><a href="#">Item ccc</a></li></ul>
+						</li>
+						<li><a href="#">Item three</a></li>
+						<li><a href="#">Item four</a></li>
+						<li><a href="#">Item five</a></li>
+						<li><a href="#">Item six</a></li>
 					</ul>
 					<form id="searchForm" action="index_submit" method="get" accept-charset="utf-8">
 						<input type="text" name="searchInput" value="search" id="searchInput">
@@ -39,11 +43,13 @@
 			</div><!--/.inset-->
 			<hr class="accessibility" />
 		</div><!--/#header-->
-		<div id="leader">
+		<div id="leader" class="full-16">
+			<a id="mainContent" class="accessibility">&darr; Page Content</a>
 			<div class="inset">
 				<div id="hero">
 					<div id="no-reel">
-						HERO: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						<h2>HERO: Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
+						<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					</div>				
 					<div id="slider">
 				    </div><!-- /#slider -->
@@ -51,34 +57,46 @@
 			</div><!--/.inset-->
 			<hr class="accessibility" />
 		</div><!--/#leader-->
-		<div id="content" class="col-16">
-			<a id="maincontent" class="accessibility">&#x2191; Page Content</a>
-			<div id="main" class="col-8 first">
-				<div class="indentLeft">
-					CONTENT: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					<div id="featured">
-						FEATURED: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						<br class="clear"/>
+		<div id="content" class="full-16">
+			<div id="main" class="col-12">
+				<div class="container">
+					<p>CONTENT: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<div id="featured" class="container">
+						<div class="col-6 first">
+							<p>FEATURED: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<!--<br class="clear"/>-->
+						</div><!--/#-->
+						<div class="col-6 last">
+							<p>FEATURED: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<!--<br class="clear"/>-->
+						</div><!--/#-->
 					</div><!--/#featured-->
 				</div><!--/.inset-->
 			</div><!--/#main-->
-			<div id="sidebar" class="col-8 last">
-				<div class="indentRight">
-					SIDEBAR: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			<div id="sidebar" class="col-4">
+				<div class="indentLeft indentRight">
+					<p>SIDEBAR: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
 				</div><!--/.inset-->
 			</div><!--/#sidebar-->
 			<div class="clear">
 				<hr class="accessibility" />
 			</div>
+			<div id="closing" class="col-16">
+				<h4>Closing: Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+				<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
 		</div><!--/#content-->
-		<div id="footer" class="">
+		<div id="footer" class="rounded">
 			<div class="inset">
-				<p>FOOTER: Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+				<p class="threeQuarter">FOOTER: Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+				<p class="byword quarter">our slogan / bywords</p>
+				<br class="clearLeft" />
 			</div><!--/.inset-->
 		</div><!--/#footer-->
-		<a href="#content" class="accessibility">&#x2191; Back to page content</a>
-		<a href="#menu" class="accessibility">&#x2191; Back to main menu</a>
+		<a href="#mainContent" class="accessibility">&#x2191; Back to page content</a>
+		<a href="#mainMenu" class="accessibility">&#x2191; Back to main menu</a>
 	<!--/</div>.inset-->
+	<!-- <div class="test">&nbsp;</div> -->
 </div><!--/#wrapper-->
 <script src="js/tail.js" type="text/javascript" charset="utf-8"></script>
 </body>

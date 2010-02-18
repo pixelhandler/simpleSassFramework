@@ -1,49 +1,91 @@
 // Grid 
-=========================== 
-// e.g. 960px, 12 columns: 10- 60-20(11) 60-10 
+// =========================== 
+//
+// e.g. 960px, 12 columns (px) : | 10+ | 60 + 20 (x11) | 60 + 10 | 
 
-!gTotal = 960px
-!grid = 16
-!gGutter = 20px
+/* =========================== */
+/* = Setup your grid here... = */
+/* =========================== */
 
-!gMargin = !gGutter / 2
-!gCol = ( !gTotal / !grid ) - !gGutter
+!gTotal = 960px 							// total page width
+!grid = 16 									// number of columns
+!gGutter = 20px 							// gutter between columns
+                                        	
+!gMargin = !gGutter / 2						// set margin at half of gutter
+!gCol = ( !gTotal / !grid ) - !gGutter 		// single column width
 
 
+// assign gird values to variables for use with semantic #id's
+
+!col4 = ( !gCol * 4 ) + ( !gGutter * ( 4 - 1 ) )
 !col16 = ( !gCol * !grid) + ( !gGutter * ( !grid - 1 ) )
 
-.test
-  width = !col16
-
-
 // mixins
-=gridTest
-  background: #fc0
-  min-height: 80px
-  filter: alpha(opacity=90)
-  +opacity(90)
+
+=colWidth(!c) 
+  width = ( !gCol * !c ) + ( !gGutter * ( !c - 1 ) )
 
 =column
   display: inline
   float: left
   margin-right = !gMargin
   margin-left = !gMargin
-  +gridTest
+
+
+// simple example...
+// =========================== 
+
+.full, .wide
+  clear: left
+
+.wide
+  +colWidth(16) 
+
+.full
+  width = !col16
+
+.quarter, .half, .threeQuarter
+  float: left
+
+.quarter
+  width = !col4
+
+.half
+  width = !col4 * 2
+
+.threeQuarter
+  width = !col4 * 3
+
+
+// design or prototype use...
+// =========================== 
+
+=gridTest
+  background: #ccc
+  margin-bottom: .5em
+  margin-top: .5em
+  min-height: 80px
+  filter: alpha(opacity=90)
+  +opacity(90)
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-13, .col-14, .col-15, .col-16
   +column
+  +gridTest
 
 .col-16
   background-color: transparent
 
+
+// loop to create column widths
+@for !i from 1 through 12
+  .col-#{!i}
+    +colWidth(!i)
+    //width = ( !gCol * !i ) + ( !gGutter * ( !i - 1 ) )
+
+
 .full-16
   margin: 0 auto
   width = !gTotal
-
-
-@for !i from 1 through 12
-  .col-#{!i}
-    width = ( !gCol * !i ) + ( !gGutter * ( !i - 1 ) )
 
 
 @for !i from 1 through 4
@@ -54,6 +96,20 @@
 @for !i from 1 through 4
   .pull-#{!i}
     margin-left = 0 - ( !i * ( !gCol + !gMargin ) )
+
+
+// helpers
+
+.container
+  margin-right = 0
+  margin-left = 0
+
+.first
+  clear: left
+  margin-left: 0
+
+.last
+  margin-right: 0
 
 .indentLeft
   margin-left = !gMargin * 2
@@ -66,11 +122,3 @@
   margin-left: 0
   padding-left: !gMargin * 2
   padding-right: !gMargin * 2
-
-.first
-  clear: left
-  margin-left: 0
-
-.last
-  margin-right: 0
-

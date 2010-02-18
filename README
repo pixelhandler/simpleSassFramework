@@ -1,3 +1,0 @@
-simpleSassFramework 
- - uses Sass for CSS grid layout generation
- - includes HTML 5 layout for supporting Sass generated CSS 
